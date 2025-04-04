@@ -11,25 +11,27 @@ body {
 }
 
 header {
-    padding: 2rem;
-    background-color: #333;
+    padding: 3rem 2rem;
+    background: linear-gradient(to right, #4f46e5, #9333ea);
     color: #f3f4f6;
     animation: fadeIn 2s ease-in-out;
+    text-align: center;
+    border-bottom: 4px solid #2a2a2a;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-family: 'Poppins', sans-serif;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 3px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
 }
 
 header p {
-    margin: 0.5rem 0 0;
-    font-size: 1.1rem;
+    margin: 1rem 0 0;
+    font-size: 1.2rem;
     font-family: 'Roboto', sans-serif;
-    color: #d1d5db;
+    color: #e5e7eb;
 }
 
 header .profile-pic {
@@ -41,19 +43,23 @@ header .profile-pic {
 }
 
 header nav {
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 header nav a {
-    margin: 0 1rem;
+    margin: 0 1.5rem;
     text-decoration: none;
     color: #f3f4f6;
     font-weight: bold;
-    transition: color 0.3s ease;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 header nav a:hover {
-    color: #9333ea;
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
 }
 
 .links ul {
@@ -96,7 +102,7 @@ links a:hover::after {
     width: 100%;
 }
 
-#about, #projects, #connect {
+#about, #projects, #connect, #education, #skills {
     padding: 2rem;
     margin: 2rem auto;
     max-width: 800px;
@@ -115,7 +121,7 @@ links a:hover::after {
     border: 3px solid #4f46e5;
 }
 
-#about h2, #projects h2, #connect h2 {
+#about h2, #projects h2, #connect h2, #education h2, #skills h2 {
     font-family: 'Poppins', sans-serif;
     font-size: 2rem;
     color: #9333ea;
@@ -123,7 +129,7 @@ links a:hover::after {
     margin-bottom: 1rem;
 }
 
-#about p, .project p {
+#about p, .project p{
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     color: #e5e7eb;
@@ -208,4 +214,38 @@ footer p {
     to {
         opacity: 1;
     }
+}
+
+#college, #education p{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+#skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+#skills li {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(to right, #4f46e5, #9333ea);
+    border-radius: 20px;
+    color: #f3f4f6;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+#skills li:hover {
+    transform: scale(1.1);
+    background: linear-gradient(to right, #9333ea, #4f46e5);
 }
