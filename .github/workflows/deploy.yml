@@ -3,25 +3,32 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # or 'master' if that's your default branch
+      - main  # or your default branch
 
 permissions:
-  contents: write  # Needed for GitHub Pages deploy
+  contents: write
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout the repo
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Inject Google Maps API key
-        run: |
-          find . -type f -name "*.html" -exec sed -i 's|REPLACE_WITH_GOOGLE_MAPS_API_KEY|${{ secrets.GOOGLE_MAPS_API_KEY }}|g' {} +
+      - name: Set up Node.js (optional, only if needed for builds)
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
 
+      # 🔐 Create config.json with your secret
+      - name: Create config.json
+        run: |
+          echo '{ "GOOGLE_MAPS_API_KEY": "${{ secrets.GOOGLE_MAPS_API_KEY }}" }' > config.json
+
+      # 📤 Deploy to gh-pages branch
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .  # This is the folder to deploy (root in your case)
+          publish_dir: .  # Adjust if your site files are in a subfolder like dist/
