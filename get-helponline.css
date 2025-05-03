@@ -210,3 +210,54 @@ h1 {
     background-color: #fcfaf6;
     color: #76ac8e;
 }
+
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px;
+        height: auto;
+        overflow-x: hidden;
+    }
+
+    h1 {
+        font-size: 2em;
+        padding: 10px;
+    }
+
+    #results, .link-container, .input-container, input, textarea {
+        width: 95% !important;
+        max-width: none !important;
+    }
+
+    #menu-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    #menu-icon .line {
+        width: 20px;
+        height: 2px;
+    }
+
+    #menu-options {
+        top: 50px;
+        width: 140px;
+    }
+
+    #menu-options a {
+        font-size: 13px;
+        padding: 10px 14px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    #LogoImg {
+        width: 100px;
+    }
+}

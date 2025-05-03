@@ -1,23 +1,14 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Special+Gothic+Expanded+One&display=swap');
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 @keyframes slideDown {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 body {
@@ -25,7 +16,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-attachment: fixed; 
+    background-attachment: fixed;
     margin: 0;
     height: 100vh;
     display: flex;
@@ -34,78 +25,78 @@ body {
     align-items: center;
     font-family: 'Cal Sans', sans-serif;
     animation: fadeIn 1.5s ease-in-out;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .container {
     display: flex;
-    flex-direction: column; 
-    align-items: center; 
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    width: 100%;
+}
+
+h1, h2 {
+    text-align: center;
+    border: none;
 }
 
 h1 {
     font-family: "Special Gothic Expanded One", sans-serif;
     font-weight: 400;
-    font-style: normal;
     color: #fcfaf6;
-    text-align: center;
-    border: none;
     text-shadow: 2px 2px 0 #000000, -2px -2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000;
+    font-size: 2.5rem;
 }
 
 h2 {
     font-family: "Special Gothic Expanded One", sans-serif;
     font-weight: 400;
-    font-style: normal;
     color: #76ac8e;
-    text-align: center;
-    margin-left: 10px; 
-    margin-top: -10px; 
-    border: none;
+    margin-top: -10px;
+    margin-left: 10px;
     text-shadow: 2px 2px 0 #FCFAF6, -2px -2px 0 #FCFAF6, 2px -2px 0 #FCFAF6, -2px 2px 0 #FCFAF6;
+    font-size: 1.5rem;
 }
 
 #Btn-hlder {
     display: flex;
-    gap: 150px;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 #Button {
     height: 50px;
-    width: 350px; 
-    border-radius: 20px; 
-    background-color: #fcfaf6; 
-    text-align: center;
+    width: 80%;
+    max-width: 350px;
+    border-radius: 20px;
+    background-color: #fcfaf6;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    font-size: 1rem;
 }
 
 #Button:hover {
     background: linear-gradient(to right, hsl(107, 21%, 53%) 0%, hsl(107, 21%, 53%) 100%);
     background-size: 200% 100%;
-    background-position: left;
-    border-color: #fcfaf6;
-    border-width: 1px;
-    border-style: solid;
-    transition: background-position 0.5s ease-in-out, transform 0.3s ease-in-out;
-    transform: scale(1.1);
     background-position: right;
-    text-align: center;
+    border: 1px solid #fcfaf6;
+    transform: scale(1.1);
     font-family: "Special Gothic Expanded One", sans-serif;
     font-weight: 400;
-    font-style: normal;
 }
 
 #LogoImg {
-    width: 100px; 
-    height: 100px; 
-    border-radius: 50%; 
-    margin-bottom: 20px; 
-    border-color: #fcfaf6;
-    border-width: 5px;
-    border-style: solid;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 5px solid #fcfaf6;
     animation: slideDown 1s ease-in-out;
 }
 
@@ -114,7 +105,7 @@ h2 {
     top: 20px;
     left: 20px;
     z-index: 10;
-    padding-bottom: 20px; 
+    padding-bottom: 20px;
 }
 
 #menu-icon {
@@ -178,4 +169,34 @@ h2 {
     display: block;
     opacity: 1;
     visibility: visible;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+        margin-left: 0;
+    }
+
+    #Button {
+        width: 90%;
+    }
+
+    #Btn-hlder {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #menu-options {
+        width: 140px;
+    }
+
+    #menu-options a {
+        font-size: 12px;
+        padding: 10px 16px;
+    }
 }
