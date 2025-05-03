@@ -1,18 +1,22 @@
-name: Inject API Key and Deploy
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main
+      - main  # or 'master' if that's your default branch
+
+permissions:
+  contents: write  # Needed for GitHub Pages deploy
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout the repo
         uses: actions/checkout@v3
 
-      - name: Inject Google Maps API Key into HTML
+      - name: Inject Google Maps API key
         run: |
           find . -type f -name "*.html" -exec sed -i 's|REPLACE_WITH_GOOGLE_MAPS_API_KEY|${{ secrets.GOOGLE_MAPS_API_KEY }}|g' {} +
 
@@ -20,4 +24,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
+          publish_dir: .  # This is the folder to deploy (root in your case)
