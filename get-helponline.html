@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Help - NeuroNest</title>
+    <link rel="stylesheet" href="get-helponline.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .input-container {
+            text-align: center;
+        }
+        #results {
+            text-align: center;
+        }
+        .link-container {
+            padding: 10px;
+            font-size: smaller;
+        }
+    </style>
+</head>
+<body>
+    <div id="dropdown-menu">
+        <div id="menu-icon">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div id="menu-options">
+            <a href="index.html">Home</a>
+            <a href="get-help.html">Find Support</a>
+            <a href="get-helponline.html">Find Support Online</a>
+            <a href="contact-us.html">Contact Us</a>
+        </div>
+    </div>
+    <h1>Find Support Online </h1>
+    <div id="results" style="margin-top: 20px;">
+        <h2> 
+            <div class="link-container">
+                Crisis Help Line &nbsp;-&nbsp; <a href="https://www.crisischat.org/" target="_blank">Crisis Chat</a>
+            </div>
+            <div class="link-container">
+                Online Chat &nbsp;-&nbsp; <a href="https://www.7cups.com/" target="_blank">7 Cups</a>
+            </div>
+            <div class="link-container">
+                Online Chat Suicide &nbsp;-&nbsp; <a href="https://www.befrienders.org/" target="_blank">Befrienders</a>
+            </div>
+            <div class="link-container">
+                Online Journal / Chat &nbsp;-&nbsp; <a href="https://www.kooth.com/" target="_blank">Kooth</a>
+            </div>
+        </h2>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuIcon = document.getElementById('menu-icon');
+            const menuOptions = document.getElementById('menu-options');
+
+            menuIcon.addEventListener('click', () => {
+                menuOptions.classList.toggle('show');
+            });
+        });
+    </script>
+</body>
+</html>

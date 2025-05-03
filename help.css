@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Special+Gothic+Expanded+One&display=swap');
+
+body {
+    background-color: #76ac8e; 
+    background-image: url('https://i.ibb.co/MkBghGJT/tinted-holding-hands.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed; 
+    font-family: 'Cal Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+h1 {
+    font-family: 'Special Gothic Expanded One', sans-serif;
+    font-size: 3em;
+    color: #000000;
+    margin-bottom: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 10px 0;
+    width: 100%;
+    animation: slideDown 0.6s ease-in-out forwards;
+    border: none;
+    text-shadow: 2px 2px 0 #ffffff, -2px -2px 0 #ffffff, 2px -2px 0 #ffffff, -2px 2px 0 #ffffff;
+    border-radius: 10px;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+    position: sticky;
+    top: 60px;
+    z-index: 10;
+    padding: 10px 0;
+    width: 75%;
+    animation: fadeInUp 0.7s ease-in-out forwards;
+    border: none;
+    box-shadow: none;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+input {
+    padding: 15px;
+    font-size: 1rem;
+    border: 3px dashed #9BABA2;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    background-color: #a39999;
+    color: #333333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: #9BABA2;
+    color: #FCFAF6;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.6s ease; /* Increased duration */
+    text-transform: uppercase;
+    font-family: 'Cal Sans', sans-serif;
+}
+
+button:hover {
+    background-color: #9BABA2;
+}
+
+#results {
+    margin-top: 20px;
+    font-size: 1rem;
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    background: rgba(163, 153, 153, 0.7); /* Adjusted for 70% transparency */
+    border: 3px solid #9BABA2;
+    border-radius: 15px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    overflow-y: auto;
+    flex-grow: 1;
+    max-height: 300px;
+    animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+#results div {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #A3C4A3;
+    color: #FCFAF6;
+    border-radius: 10px;
+    font-family: 'Cal Sans', sans-serif;
+    font-size: 1rem;
+}
+
+#Logo {
+    margin-bottom: 20px;
+}
+
+#LogoImg {
+    width: 150px;
+    height: auto;
+}
+
+#dropdown-menu {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    padding-bottom: 20px; 
+}
+
+#menu-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #fcfaf6;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.6s ease; 
+}
+
+#menu-icon:hover {
+    transform: scale(1.1);
+}
+
+#menu-icon .line {
+    width: 25px;
+    height: 3px;
+    background-color: #76ac8e;
+    margin: 4px 0;
+    border-radius: 2px;
+}
+
+#menu-options {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #fcfaf6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    padding: 6px 0;
+    opacity: 0;
+    visibility: hidden;
+    width: 160px;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#menu-options.show {
+    display: block; /* Show when toggled */
+    opacity: 1;
+    visibility: visible;
+}
+
+#menu-options a {
+    display: block;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: #76ac8e;
+    font-family: 'Cal Sans', sans-serif;
+    font-size: 14px;
+    transition: background-color 1s ease, color 1s ease; 
+}
+
+#menu-options a:hover {
+    background-color: #76ac8e;
+    color: #fcfaf6;
+}
+
+#dropdown-menu:hover #menu-options,
+#menu-options:hover {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s; 
+}

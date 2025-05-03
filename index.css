@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Special+Gothic+Expanded+One&display=swap');
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+body {
+    background-color: #76ac8e; 
+    background-image: url('https://i.ibb.co/4Rkc35hJ/strong-tinted-sunset-image.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed; 
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Cal Sans', sans-serif;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+}
+
+h1 {
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #fcfaf6;
+    text-align: center;
+    border: none;
+    text-shadow: 2px 2px 0 #000000, -2px -2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000;
+}
+
+h2 {
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #76ac8e;
+    text-align: center;
+    margin-left: 10px; 
+    margin-top: -10px; 
+    border: none;
+    text-shadow: 2px 2px 0 #FCFAF6, -2px -2px 0 #FCFAF6, 2px -2px 0 #FCFAF6, -2px 2px 0 #FCFAF6;
+}
+
+#Btn-hlder {
+    display: flex;
+    gap: 150px;
+}
+
+#Button {
+    height: 50px;
+    width: 350px; 
+    border-radius: 20px; 
+    background-color: #fcfaf6; 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#Button:hover {
+    background: linear-gradient(to right, hsl(107, 21%, 53%) 0%, hsl(107, 21%, 53%) 100%);
+    background-size: 200% 100%;
+    background-position: left;
+    border-color: #fcfaf6;
+    border-width: 1px;
+    border-style: solid;
+    transition: background-position 0.5s ease-in-out, transform 0.3s ease-in-out;
+    transform: scale(1.1);
+    background-position: right;
+    text-align: center;
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#LogoImg {
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%; 
+    margin-bottom: 20px; 
+    border-color: #fcfaf6;
+    border-width: 5px;
+    border-style: solid;
+    animation: slideDown 1s ease-in-out;
+}
+
+#dropdown-menu {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    padding-bottom: 20px; 
+}
+
+#menu-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #fcfaf6;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+#menu-icon:hover {
+    transform: scale(1.1);
+}
+
+#menu-icon .line {
+    width: 25px;
+    height: 3px;
+    background-color: #76ac8e;
+    margin: 4px 0;
+    border-radius: 2px;
+}
+
+#menu-options {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #fcfaf6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    padding: 6px 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    width: 160px;
+}
+
+#menu-options a {
+    display: block;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: #76ac8e;
+    font-family: 'Cal Sans', sans-serif;
+    font-size: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#menu-options a:hover {
+    background-color: #76ac8e;
+    color: #fcfaf6;
+}
+
+#dropdown-menu:hover #menu-options {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
