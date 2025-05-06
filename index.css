@@ -71,7 +71,6 @@ h2 {
 #Button {
     height: 50px;
     width: 80%;
-    max-width: 350px;
     border-radius: 20px;
     background-color: #fcfaf6;
     display: flex;
