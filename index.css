@@ -171,28 +171,3 @@ h2 {
     visibility: visible;
 }
 
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
-        font-size: 1.2rem;
-        margin-left: 0;
-    }
-
-
-    #Btn-hlder {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    #menu-options {
-        width: 140px;
-    }
-
-    #menu-options a {
-        font-size: 12px;
-        padding: 10px 16px;
-    }
-}
