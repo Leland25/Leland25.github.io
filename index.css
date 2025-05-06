@@ -171,7 +171,6 @@ h2 {
     visibility: visible;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     h1 {
         font-size: 2rem;
@@ -182,9 +181,6 @@ h2 {
         margin-left: 0;
     }
 
-    #Button {
-        width: 90%;
-    }
 
     #Btn-hlder {
         flex-direction: column;
