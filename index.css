@@ -66,8 +66,18 @@ h2 {
     gap: 20px;
     justify-content: center;
     margin-top: 20px;
-    width: 1000px;
+    width: 800px;
 }
+
+#Btn-hlder2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+    width: 800px;
+}
+
 
 #Button {
     height: 50px;
