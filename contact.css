@@ -85,6 +85,10 @@ body {
     visibility: visible;
 }
 
+#message {
+    resize: both;
+}
+
 h1 {
     margin-bottom: 20px;
 }
