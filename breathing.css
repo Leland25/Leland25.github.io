@@ -1,0 +1,150 @@
+body {
+    background-image: url('https://thumbs.dreamstime.com/b/ai-generated-portrait-woman-meditating-chakra-aura-relaxation-yoga-concept-dark-abstract-background-description-368083947.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #ffeaea;
+}
+
+#dropdown-menu {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    padding-bottom: 20px; 
+}
+
+#menu-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #fcfaf6;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+#menu-icon:hover {
+    transform: scale(1.1);
+}
+
+#menu-icon .line {
+    width: 25px;
+    height: 3px;
+    background-color: #76ac8e;
+    margin: 4px 0;
+    border-radius: 2px;
+}
+
+#menu-options {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #fcfaf6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    padding: 6px 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    width: 160px;
+}
+
+#menu-options a {
+    display: block;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: #76ac8e;
+    font-family: 'Cal Sans', sans-serif;
+    font-size: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#menu-options a:hover {
+    background-color: #76ac8e;
+    color: #fcfaf6;
+}
+
+#dropdown-menu:hover #menu-options {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+#exercise-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 80vh;
+    background-color: rgba(163, 153, 153, 0.7);
+    border-radius: 10px;
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#container h1 {
+    font-size: 2.5em;
+    color: #76ac8e;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.exercise {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 100%;
+    background-color: rgba(163, 153, 153, 0.7);
+    border-radius: 10px;
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.exercise:nth-of-type(2) {
+    overflow-y: visible;
+}
+
+.exercise h2 {
+    font-size: 2.5em;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.exercise p {
+    font-size: 1.3em;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 25px;
+    max-width: 75%;
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.vidbutton {
+    width: 50px;
+    height: 50px;
+}
