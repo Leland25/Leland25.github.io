@@ -99,6 +99,7 @@ button:hover {
     text-align: center;
     overflow-y: auto;
     max-height: 300px;
+    color: #0f5132;
 }
 
 #results div {
