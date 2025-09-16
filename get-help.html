@@ -66,7 +66,7 @@
             places.forEach(place => {
               const div = document.createElement('div');
               const link = document.createElement('a');
-              const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(place.name)}&destination_place_id=${place.place_id}`;
+              const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${place.geometry.location.lat()},${place.geometry.location.lng()}`;
               link.href = mapsUrl;
               link.target = '_blank';
               link.textContent = `${place.name} - ${place.vicinity}`;
