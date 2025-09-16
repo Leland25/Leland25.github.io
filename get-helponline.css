@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Special+Gothic+Expanded+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600&display=swap');
 
 body {
-    background-color: #ffffff;
-    font-family: 'Cal Sans', sans-serif;
+    background: linear-gradient(135deg, #d1e7dd, #fefae0);
+    color: #1f2937;
+    font-family: 'SF Pro Display', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -10,56 +11,15 @@ body {
     align-items: center;
     justify-content: flex-start;
     height: 100vh;
-    overflow: visible;
-    opacity: 0;
-    animation: fadeIn 0.5s ease-in-out forwards;
-}
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    animation: fadeIn 1s ease-in-out;
 }
 
 h1 {
-    font-family: 'Special Gothic Expanded One', sans-serif;
-    font-size: 3em;
-    color: #76ac8e;
-    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 3rem;
+    margin: 20px 0;
     text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 0;
-    padding: 10px 0;
-    width: 100%;
-    animation: slideDown 0.6s ease-in-out forwards;
-    border: none;
-    text-shadow: 2px 2px 0 #ffffff, -2px -2px 0 #ffffff, 2px -2px 0 #ffffff, -2px 2px 0 #ffffff;
-    border-radius: 10px;
-}
-
-@keyframes slideDown {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        transform: translateY(30px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+    color: #0f5132;
 }
 
 #results {
@@ -68,207 +28,82 @@ h1 {
     width: 80%;
     max-width: 600px;
     padding: 20px;
-    background: rgba(163, 153, 153, 0.7);
-    border: 3px solid #9BABA2;
-    border-radius: 15px;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     overflow-y: auto;
-    flex-grow: 1;
     max-height: 300px;
-    animation: fadeInUp 0.8s ease-in-out forwards;
-    display: flex;
-    flex-direction: column;
 }
 
 #results div {
-    margin-bottom: 15px;
-    padding: 15px;
-    background-color: #A3C4A3;
-    color: #FCFAF6;
-    border-radius: 10px;
-    font-family: 'Cal Sans', sans-serif;
-    font-size: 1rem;
-}
-
-#Logo {
-    margin-bottom: 20px;
-}
-
-#LogoImg {
-    width: 150px;
-    height: auto;
-}
-
-#dropdown-menu {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 10;
-    padding-bottom: 20px; 
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #e5e7eb;
+    color: #1f2937;
+    border-radius: 8px;
 }
 
 #menu-icon {
     width: 50px;
     height: 50px;
-    background-color: #fcfaf6;
+    background: #0f5132;
     border-radius: 50%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.6s ease; 
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 #menu-icon:hover {
+    background-color: #14532d;
     transform: scale(1.1);
 }
 
 #menu-icon .line {
-    width: 25px;
-    height: 3px;
-    background-color: #76ac8e;
-    margin: 4px 0;
-    border-radius: 2px;
+    width: 20px;
+    height: 2px;
+    background-color: #ffffff;
+    margin: 3px 0;
 }
 
 #menu-options {
     display: none;
     position: absolute;
-    top: 60px;
+    top: 50px;
     left: 0;
-    background-color: #fcfaf6;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    padding: 6px 0;
-    transition: opacity 2s ease, visibility 2s ease; 
-    opacity: 0;
-    visibility: hidden;
-    width: 160px;
-    z-index: 1009; 
-}
-
-#menu-options.show {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-    transition-delay: 0s; 
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    width: 180px;
 }
 
 #menu-options a {
     display: block;
     padding: 12px 18px;
     text-decoration: none;
-    color: #76ac8e;
-    font-family: 'Cal Sans', sans-serif;
-    font-size: 14px;
-    transition: background-color 1s ease, color 1s ease; 
+    color: #1f2937;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
 
 #menu-options a:hover {
-    background-color: #76ac8e;
-    color: #fcfaf6;
+    background-color: #e9ecef;
 }
 
-#dropdown-menu:hover #menu-options,
-#menu-options:hover {
+#dropdown-menu:hover #menu-options {
     display: block;
-    opacity: 1;
-    visibility: visible;
-    transition-delay: 0.5s; 
 }
-
-.link-container {
-    padding: 10px;
-    font-size: 0.9rem;
-    background-color: #fcfaf6;
-    border-radius: 8px;
-    display: block;
-    align-self: stretch;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.link-container a {
-    margin-left: 5px;
-    padding: 5px 10px;
-    background-color: #76ac8e;
-    color: #fcfaf6;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.link-container a:hover {
-    background-color: #fcfaf6;
-    color: #76ac8e;
-}
-
 
 @media (max-width: 768px) {
-    body {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 10px;
-        height: auto;
-        overflow-x: hidden;
-    }
-
     h1 {
-        font-size: 2em;
-        padding: 10px;
+        font-size: 2.5rem;
     }
 
-    #results, .input-container, input, textarea {
-        width: 75% !important;
-        max-width: none !important;
-    }
-
-    #results div {
-        margin-bottom: 15px;
-        padding: 10px;
-        background-color: #A3C4A3;
-        color: #FCFAF6;
-        border-radius: 10px;
-        font-family: 'Cal Sans', sans-serif;
-        font-size: 0.7rem;
-    }
-
-    .link-container{
-        width: 100%;
-        margin-left: -10px;
-    }
-
-    #menu-icon {
-        width: 40px;
-        height: 40px;
-    }
-
-    #menu-icon .line {
-        width: 20px;
-        height: 2px;
-    }
-
-    #menu-options {
-        top: 50px;
-        width: 140px;
-    }
-
-    #menu-options a {
-        font-size: 13px;
-        padding: 10px 14px;
-    }
-
-    button {
-        width: 100%;
-        font-size: 15px;
-        padding: 12px;
-    }
-
-    #LogoImg {
-        width: 100px;
+    #results {
+        width: 90%;
     }
 }

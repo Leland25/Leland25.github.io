@@ -23,16 +23,15 @@
     }
   </style>
 <script>
-  // Load API key securely from config.json
   fetch('config.json')
     .then(response => response.json())
     .then(config => {
-      const apiKey = config.GOOGLE_MAPS_API_KEY; // ✅ pull from config.json
+      const apiKey = config.GOOGLE_MAPS_API_KEY; 
       const script = document.createElement('script');
       script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
       script.async = true;
       script.onload = () => console.log("Google Maps API loaded");
-      document.head.appendChild(script); // ✅ append script BEFORE onload triggers
+      document.head.appendChild(script); 
     })
     .catch(error => {
       console.error('Error loading config.json:', error);
@@ -44,19 +43,19 @@
       return;
     }
 
-    const postcode = document.getElementById('postcode').value.trim(); // ✅ trim spaces
+    const postcode = document.getElementById('postcode').value.trim(); 
     const geocoder = new google.maps.Geocoder();
     const service = new google.maps.places.PlacesService(
       document.getElementById('map')
     );
 
-    geocoder.geocode({ address: postcode, region: 'uk' }, (results, status) => { // ✅ bias to UK
-      console.log("Geocode status:", status, results); // ✅ debug log
+    geocoder.geocode({ address: postcode, region: 'uk' }, (results, status) => { 
+      console.log("Geocode status:", status, results); 
       if (status === 'OK') {
         const location = results[0].geometry.location;
         const request = {
           location: location,
-          radius: 5000,
+          radius:20000,
           keyword: 'mental health clinic therapist'
         };
 
@@ -80,7 +79,7 @@
           }
         });
       } else {
-        alert('Geocode failed: ' + status); // ✅ show actual error
+        alert('Geocode failed: ' + status); 
       }
     });
   }
