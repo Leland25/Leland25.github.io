@@ -66,7 +66,8 @@
             places.forEach(place => {
               const div = document.createElement('div');
               const link = document.createElement('a');
-              link.href = `https://www.google.com/maps/place/?q=place_id:${place.place_id}`;
+              const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(place.name)}&destination_place_id=${place.place_id}`;
+              link.href = mapsUrl;
               link.target = '_blank';
               link.textContent = `${place.name} - ${place.vicinity}`;
               link.style.color = '#FCFAF6';
@@ -97,6 +98,7 @@
       <a href="get-help">Find Support</a>
       <a href="get-helponline">Find Support Online</a>
       <a href="contact-us">Contact Us</a>
+      <a href="breathing">Breathing Exercises</a>
     </div>
   </div>
   <h1>Find Support</h1>
